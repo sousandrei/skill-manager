@@ -8,6 +8,9 @@ import {
 	getSkills
 } from '../actions/skills'
 
+import Header from '../components/Header'
+import CardList from '../components/CardList'
+
 export class MainPage extends React.Component {
 	state = {
 		name: '',
@@ -43,37 +46,16 @@ export class MainPage extends React.Component {
 	render() {
 		return (
 			<section>
-				add your skills
-				<input
-					name='name'
-					type='text'
-					value={this.state.name}
-					onChange={this.handleChange} />
 
-				<select
-					name='experience'
-					value={this.state.experience}
-					onChange={this.handleChange}>
-					<option value='' disabled hidden>Experience</option>
-					<option value='1 year'> {'<'} 1 year</option>
-					<option value='1 - 3 years'>1 - 3 years</option>
-					<option value='3 - 5 years'>3 - 5 years</option>
-					<option value='5 - 7 years'>5 - 7 years</option>
-					<option value='7+ years'>7+ years</option>
-				</select>
+				<Header
+					name={this.state.name}
+					addSkill={this.addSkill}
+					handleChange={this.handleChange}
+					experience={this.state.experience} />
 
-				<button type='button' onClick={this.addSkill}>Click Me!</button>
-
-
-				{this.props.skills.map((s, i) => (
-					<div key={i}>
-						<span>{i}</span>
-						<span>{s.name}</span>
-						<span>{s.experience}</span>
-						<button type='button'
-							onClick={() => this.delSkill(s.id)}>x</button>
-					</div>
-				))}
+				<CardList
+					skills={this.props.skills}
+					delSkill={this.delSkill} />
 
 			</section>
 		)
@@ -94,13 +76,11 @@ const mapStateToProps = state => {
 }
 
 
-const mapDispatchToProps = dispatch => {
-	return {
-		addSkill: id => dispatch(addSkill(id)),
-		delSkill: id => dispatch(delSkill(id)),
-		getSkills: () => dispatch(getSkills())
-	}
-}
+const mapDispatchToProps = dispatch => ({
+	addSkill: id => dispatch(addSkill(id)),
+	delSkill: id => dispatch(delSkill(id)),
+	getSkills: () => dispatch(getSkills())
+})
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage)

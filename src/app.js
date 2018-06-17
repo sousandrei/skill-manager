@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
 import AppRouter from './routers/AppRouter'
 
-import LoadingPage from './components/LoadingPage'
+import LoadingPage from './pages/LoadingPage'
 
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'

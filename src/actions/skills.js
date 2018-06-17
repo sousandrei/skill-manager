@@ -15,7 +15,6 @@ export const addSkill = (skillData = {}) => {
 		} = skillData
 
 		const skill = {
-			id: Math.floor(Math.random() * 1000),
 			name,
 			experience
 		}
