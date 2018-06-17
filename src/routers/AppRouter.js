@@ -3,7 +3,7 @@ import React from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 
-import MainPage from '../components/MainPage'
+import MainPage from '../pages/MainPage'
 import NotFoundPage from '../components/NotFoundPage'
 
 export const history = createBrowserHistory()

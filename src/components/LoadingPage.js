@@ -2,9 +2,10 @@ import React from 'react'
 
 const LoadingPage = () => (
 	<div className='loader'>
-		<img
+		loading
+		{/* <img
 			className='loader__image'
-			src='/images/loader.gif' />
+			src='/images/loader.gif' /> */}
 	</div>
 )
 

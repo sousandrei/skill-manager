@@ -5,10 +5,12 @@ export default (
 	action
 ) => {
 	switch (action.type) {
+		case 'GET_SKILLS':
+			return action.skills
 		case 'ADD_SKILL':
 			return [...state, action.skill]
 		case 'DEL_SKILL':
-			return state.filter(({ id }) => id != action.id)
+			return state.filter(skill => skill.id != action.id)
 		default:
 			return state
 	}
