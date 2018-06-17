@@ -54,10 +54,12 @@ export class MainPage extends React.Component {
 					name='experience'
 					value={this.state.experience}
 					onChange={this.handleChange}>
-					<option value='' disabled hidden>experience</option>
-					<option value='a'>a</option>
-					<option value='b'>b</option>
-					<option value='c'>c</option>
+					<option value='' disabled hidden>Experience</option>
+					<option value='1 year'> {'<'} 1 year</option>
+					<option value='1 - 3 years'>1 - 3 years</option>
+					<option value='3 - 5 years'>3 - 5 years</option>
+					<option value='5 - 7 years'>5 - 7 years</option>
+					<option value='7+ years'>7+ years</option>
 				</select>
 
 				<button type='button' onClick={this.addSkill}>Click Me!</button>

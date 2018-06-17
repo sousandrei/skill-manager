@@ -1,10 +1,14 @@
+import axios from 'axios'
+
+const { SERVER } = process.env
+
 export const addSkillAction = skill => ({
 	type: 'ADD_SKILL',
 	skill
 })
 
 export const addSkill = (skillData = {}) => {
-	return dispatch => {
+	return async dispatch => {
 		const {
 			name,
 			experience
@@ -16,8 +20,12 @@ export const addSkill = (skillData = {}) => {
 			experience
 		}
 
-		//todo request
-		return dispatch(addSkillAction(skill))
+		try {
+			let result = await axios.post(`${SERVER}/skills`, skill)
+			return dispatch(addSkillAction(result.data))
+		} catch (err) {
+			console.error('could not add skill')
+		}
 	}
 }
 
@@ -27,12 +35,16 @@ export const delSkillAction = id => ({
 })
 
 export const delSkill = id => {
-	return dispatch => {
+	return async dispatch => {
 		if (!id)
 			return
 
-		//todo request
-		return dispatch(delSkillAction(id))
+		try {
+			await axios.delete(`${SERVER}/skills/${id}`)
+			return dispatch(delSkillAction(id))
+		} catch (err) {
+			console.error('could not delete skill')
+		}
 	}
 }
 
@@ -42,10 +54,12 @@ export const getSkillsAction = skills => ({
 })
 
 export const getSkills = () => {
-	return dispatch => {
-		let skills = [{ id: 101, name: 'a', experience: 'ca' }]
-
-		//todo request
-		return dispatch(getSkillsAction(skills))
+	return async dispatch => {
+		try {
+			let result = await axios.get(`${SERVER}/skills`)
+			return dispatch(getSkillsAction(result.data))
+		} catch (err) {
+			console.error('could not get skills')
+		}
 	}
 }
