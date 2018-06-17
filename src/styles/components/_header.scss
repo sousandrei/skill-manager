@@ -1,0 +1,72 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    height: 20%;
+    input {
+        height: 5vh;
+        border-radius: 3px;
+        border: 1px solid $dark-blue;
+        padding: 0 3%;
+        font-size: 0.85rem;
+        font-weight: 700;
+        width: 100%;
+    }
+    input::placeholder {
+        font-weight: 400;
+    }
+}
+
+.header__second-line {
+    display: flex;
+    flex-direction: row;
+    margin: 5% 0;
+    select {
+        width: 65%;
+        margin-right: 5%;
+        height: 5vh;
+        padding: 0 3%;
+        border: 1px solid $dark-blue;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+    button {
+        width: 30%;
+        height: 5vh;
+        border-radius: 3px;
+        border: 1px solid $dark-blue;
+        background: $dark-blue;
+        color: white;
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+    button:hover {
+        background: $grey-blue;
+    }
+    button:disabled {
+        color: $dark-grey;
+		background: $lighter-grey;
+		border: none;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+    .header {
+		height: 15%;
+		margin-top: 0;
+        flex-direction: row;
+        input {
+            width: 40%;
+			margin-top: 3%;
+			padding-right: 2.5%;
+        }
+    }
+    .header__second-line {
+		width: 60%;
+		margin: 3% 0 0 0;
+		padding-left: 2.5%;
+    }
+}

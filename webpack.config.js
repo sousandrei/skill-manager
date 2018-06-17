@@ -1,7 +1,5 @@
 require('dotenv')
 
-console.log(process.env)
-
 const { normalize } = require('path')
 const Dotenv = require('dotenv-webpack')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')

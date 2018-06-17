@@ -7,9 +7,9 @@ const CardList = ({
 	skills
 }) =>
 	(
-		<div>
+		<div className='card-list'>
 			{skills.map((s, i) =>
-				<Card key={i} skill={s} />)}
+				<Card key={i} index={i} skill={s} />)}
 		</div>
 	)
 

@@ -31,12 +31,6 @@ export class MainPage extends React.Component {
 			experience
 		} = this.state
 
-		if (!name)
-			return alert('porra kd o nome')
-
-		if (!experience)
-			return alert('porra kd o exp')
-
 		this.props.addSkill({ name, experience })
 		this.setState({ name: '', experience: '' })
 	}
@@ -45,8 +39,8 @@ export class MainPage extends React.Component {
 
 	render() {
 		return (
-			<section>
-
+			<section className='main'>
+				<span className='main__title'>ADD YOUR SKILLS</span>
 				<Header
 					name={this.state.name}
 					addSkill={this.addSkill}

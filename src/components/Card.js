@@ -18,12 +18,18 @@ export class Card extends React.Component {
 		} = this.props
 
 		return (
-			<div>
-				<span>{index}</span>
-				<span>{name}</span>
-				<span>{experience}</span>
-				<button type='button'
-					onClick={() => delSkill(id)}>x</button>
+			<div className='card'>
+				<span className='card__index'>{index + 1}</span>
+				<div className='card__text'>
+					<span className='card__name'>{name}</span>
+					<span className='card__exp'>{experience}</span>
+				</div>
+				<button
+					className='card__button'
+					type='button'
+					onClick={() => delSkill(id)}>
+					<i className='fas fa-times'></i>
+				</button>
 			</div>
 		)
 	}

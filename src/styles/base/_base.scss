@@ -1,6 +1,8 @@
+html,
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    background: #f4f4f4;
+    height: 100%;
+    width: 100%;
 }
 
 button {
@@ -11,12 +13,20 @@ button:disabled {
     cursor: default;
 }
 
-.is-active {
-    font-weight: bold;
-}
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+*>span,
+*>input {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+#app,
+#app>div {
+    height: 100%;
+    width: 100%;
 }
