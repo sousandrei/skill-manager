@@ -8,10 +8,10 @@ import {
 	getSkills
 } from '../actions/skills'
 
-import Header from '../components/Header'
-import CardList from '../components/CardList'
+import Header from '../components/Header/Header'
+import CardList from '../components/CardList/CardList'
 
-export class MainPage extends React.Component {
+export class Main extends React.Component {
 	state = {
 		name: '',
 		experience: ''
@@ -56,7 +56,7 @@ export class MainPage extends React.Component {
 	}
 }
 
-MainPage.propTypes = {
+Main.propTypes = {
 	addSkill: PropTypes.func,
 	delSkill: PropTypes.func,
 	getSkills: PropTypes.func,
@@ -77,5 +77,5 @@ const mapDispatchToProps = dispatch => ({
 })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainPage)
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
 

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render card 1`] = `
+<div
+  className="card"
+>
+  <span
+    className="card__index"
+  >
+    2
+  </span>
+  <div
+    className="card__text"
+  >
+    <span
+      className="card__name"
+    >
+      skill-1
+    </span>
+    <span
+      className="card__exp"
+    >
+      1 year
+    </span>
+  </div>
+  <button
+    className="card__button"
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="fas fa-times"
+    />
+  </button>
+</div>
+`;

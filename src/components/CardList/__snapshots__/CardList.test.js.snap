@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render cardlist 1`] = `
+<div
+  className="card-list"
+>
+  <Connect(Card)
+    index={0}
+    key="0"
+    skill={
+      Object {
+        "experience": "1 year",
+        "id": 123,
+        "name": "skill-1",
+      }
+    }
+  />
+  <Connect(Card)
+    index={1}
+    key="1"
+    skill={
+      Object {
+        "experience": "1 year",
+        "id": 123,
+        "name": "skill-1",
+      }
+    }
+  />
+  <Connect(Card)
+    index={2}
+    key="2"
+    skill={
+      Object {
+        "experience": "1 year",
+        "id": 123,
+        "name": "skill-1",
+      }
+    }
+  />
+</div>
+`;

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render header 1`] = `
+<section
+  className="header"
+>
+  <input
+    name="name"
+    placeholder="Node JS, Postgres, React, etc.,"
+    type="text"
+    value=""
+  />
+  <div
+    className="header__second-line"
+  >
+    <select
+      name="experience"
+      value=""
+    >
+      <option
+        disabled={true}
+        hidden={true}
+        value=""
+      >
+        Experience
+      </option>
+      <option
+        value="< 1 year"
+      >
+         
+        &lt;
+         1 year
+      </option>
+      <option
+        value="1 - 3 years"
+      >
+        1 - 3 years
+      </option>
+      <option
+        value="3 - 5 years"
+      >
+        3 - 5 years
+      </option>
+      <option
+        value="5 - 7 years"
+      >
+        5 - 7 years
+      </option>
+      <option
+        value="7+ years"
+      >
+        7+ years
+      </option>
+    </select>
+    <button
+      disabled={true}
+      type="button"
+    >
+      ADD SKILLS
+    </button>
+  </div>
+</section>
+`;
