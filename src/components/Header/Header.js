@@ -1,57 +1,87 @@
+/* 
+ header with all the input needed
+ conected to the store to add skills
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-const Header = ({
-	name,
-	addSkill,
-	experience,
-	handleChange
-}) => {
-	let invalid = false
+import { addSkill } from '../../actions/skills/skills'
 
-	if (!name.length)
-		invalid = true
+export class Header extends React.Component {
+	state = {
+		name: '',
+		experience: ''
+	}
 
-	if (!experience.length)
-		invalid = true
+	handleChange = e =>
+		this.setState({ [e.target.name]: e.target.value })
 
-	return (
-		<section className='header'>
-			<input
-				name='name'
-				type='text'
-				placeholder='Node JS, Postgres, React, etc.,'
-				value={name}
-				onChange={handleChange} />
+	addSkill = async () => {
+		const {
+			name,
+			experience
+		} = this.state
 
-			<div className='header__second-line'>
-				<select
-					name='experience'
-					value={experience}
-					onChange={handleChange}>
-					<option value='' disabled hidden>Experience</option>
-					<option value='< 1 year'> {'<'} 1 year</option>
-					<option value='1 - 3 years'>1 - 3 years</option>
-					<option value='3 - 5 years'>3 - 5 years</option>
-					<option value='5 - 7 years'>5 - 7 years</option>
-					<option value='7+ years'>7+ years</option>
-				</select>
+		await this.props.addSkill({ name, experience })
+		this.setState({ name: '', experience: '' })
+	}
 
-				<button
-					type='button'
-					disabled={invalid}
-					onClick={addSkill}>ADD SKILLS</button>
-			</div>
-		</section>
-	)
+	render() {
+		const {
+			name,
+			experience
+		} = this.state
+
+		let invalid = false
+
+		if (!name.length)
+			invalid = true
+
+		if (!experience.length)
+			invalid = true
+
+		return (
+			<section className='header'>
+				<input
+					name='name'
+					type='text'
+					placeholder='Node JS, Postgres, React, etc.,'
+					value={name}
+					onChange={this.handleChange} />
+
+				<div className='header__second-line'>
+					<select
+						name='experience'
+						value={experience}
+						onChange={this.handleChange}>
+						<option value='' disabled hidden>Experience</option>
+						<option value='< 1 year'> {'<'} 1 year</option>
+						<option value='1 - 3 years'>1 - 3 years</option>
+						<option value='3 - 5 years'>3 - 5 years</option>
+						<option value='5 - 7 years'>5 - 7 years</option>
+						<option value='7+ years'>7+ years</option>
+					</select>
+
+					<button
+						type='button'
+						disabled={invalid}
+						onClick={this.addSkill}>ADD SKILLS</button>
+				</div>
+			</section>
+		)
+	}
 }
 
 Header.propTypes = {
-	name: PropTypes.string,
-	addSkill: PropTypes.func,
-	experience: PropTypes.string,
-	handleChange: PropTypes.func
+	addSkill: PropTypes.func
 }
 
-export default Header
+
+const mapDispatchToProps = dispatch => ({
+	addSkill: skill => dispatch(addSkill(skill))
+})
+
+export default connect(undefined, mapDispatchToProps)(Header)
 
