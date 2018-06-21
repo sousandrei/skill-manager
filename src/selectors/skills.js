@@ -1,3 +1,8 @@
+/* 
+ example for a skill selector
+ not used at the moment
+ */
+
 export default (
 	skills,
 	{ text }

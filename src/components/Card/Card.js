@@ -1,3 +1,8 @@
+/* 
+ skill card
+ connected to redux store to delete the respective card
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'

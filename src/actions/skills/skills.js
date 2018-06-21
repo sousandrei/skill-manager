@@ -1,3 +1,8 @@
+/* 
+ actions and action-creators for all the skill related stuff
+ simple request with minimal validation
+ */
+
 import axios from 'axios'
 
 const { SERVER } = process.env

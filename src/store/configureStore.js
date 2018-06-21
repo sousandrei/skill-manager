@@ -1,3 +1,9 @@
+/* 
+ basic redux store with thunk, to use async actions
+ seting flag to use redux devtools on chrome
+ seting all reducers for all entities
+ */
+
 import thunk from 'redux-thunk'
 import {
 	compose,

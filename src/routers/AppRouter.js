@@ -1,3 +1,7 @@
+/* 
+ basic router, possible to expand
+ */
+
 import React from 'react'
 
 import { Router, Route, Switch } from 'react-router-dom'
@@ -10,12 +14,10 @@ export const history = createBrowserHistory()
 
 const AppRouter = () => (
 	<Router history={history}>
-		<div>
-			<Switch>
-				<Route component={Main} />
-				<Route component={NotFound} />
-			</Switch>
-		</div>
+		<Switch>
+			<Route component={Main} />
+			<Route component={NotFound} />
+		</Switch>
 	</Router>
 )
 

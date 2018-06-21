@@ -1,3 +1,8 @@
+/* 
+ skills reducer
+ treats all actions related to skills
+ */
+
 const skillsReducerDefaultState = []
 
 export default (

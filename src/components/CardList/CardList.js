@@ -1,3 +1,7 @@
+/* 
+ skill card list, HOC just to use and organize skill cards
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 

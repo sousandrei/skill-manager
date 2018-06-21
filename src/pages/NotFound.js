@@ -1,3 +1,7 @@
+/* 
+ skeleton of a 404 page
+ */
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 
