@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { delSkill } from '../../actions/skills'
+import { delSkill } from '../../actions/skills/skills'
 
 export class Card extends React.Component {
 

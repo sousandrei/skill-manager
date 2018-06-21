@@ -23,6 +23,7 @@ export const addSkill = (skillData = {}) => {
 			let result = await axios.post(`${SERVER}/skills`, skill)
 			return dispatch(addSkillAction(result.data))
 		} catch (err) {
+			/* istanbul ignore next */
 			console.error('could not add skill')
 		}
 	}
@@ -42,6 +43,7 @@ export const delSkill = id => {
 			await axios.delete(`${SERVER}/skills/${id}`)
 			return dispatch(delSkillAction(id))
 		} catch (err) {
+			/* istanbul ignore next */
 			console.error('could not delete skill')
 		}
 	}
@@ -58,6 +60,7 @@ export const getSkills = () => {
 			let result = await axios.get(`${SERVER}/skills`)
 			return dispatch(getSkillsAction(result.data))
 		} catch (err) {
+			/* istanbul ignore next */
 			console.error('could not get skills')
 		}
 	}

@@ -6,7 +6,7 @@ import {
 	addSkill,
 	delSkill,
 	getSkills
-} from '../actions/skills'
+} from '../actions/skills/skills'
 
 import Header from '../components/Header/Header'
 import CardList from '../components/CardList/CardList'
